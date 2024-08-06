@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop de Desenvolvimento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="container">
+            <h1>Workshop de Desenvolvimento</h1>
+            <button id="menu-toggle" class="menu-btn" aria-label="Abrir menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#sobre" class="nav-link" aria-current="page">Sobre</a></li>
+                    <li><a href="#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="#inscricao" class="nav-link">Inscrição</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <aside id="sidebar">
+        <button id="theme-toggle-sidebar" class="theme-btn" aria-label="Alternar tema">Mudar para Modo Escuro</button>
+        <button id="close-sidebar" class="close-btn" aria-label="Fechar menu">✕</button>
+    </aside>
+
+    <main>
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre o Workshop</h2>
+                <p>Bem-vindo ao Workshop de Desenvolvimento, onde você aprenderá sobre as últimas tendências em tecnologia e desenvolvimento. Nossos palestrantes são especialistas na área e têm muito conhecimento para compartilhar.</p>
+            </div>
+        </section>
+
+        <section id="agenda">
+            <div class="container">
+                <h2>Agenda</h2>
+                <ul>
+                    <li>9:00 - Abertura</li>
+                    <li>10:00 - Palestra 1: Novas Tecnologias</li>
+                    <li>12:00 - Almoço</li>
+                    <li>13:00 - Palestra 2: Desenvolvimento Ágil</li>
+                    <li>15:00 - Oficina: Criando Projetos</li>
+                    <li>17:00 - Encerramento</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="inscricao">
+            <div class="container">
+                <h2>Inscreva-se</h2>
+                <form action="#" method="post">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Contato</h2>
+                <p>Para mais informações, você pode entrar em contato conosco pelos seguintes meios:</p>
+                <ul>
+                    <li>Email: contato@workshopdesenvolvimento.com</li>
+                    <li>Telefone: (11) 98765-4321</li>
+                    <li>Endereço: Rua Exemplo, 123, São Paulo, SP</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Workshop de Desenvolvimento. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('open');
+        });
+
+        document.getElementById('close-sidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('open');
+        });
+
+        document.getElementById('theme-toggle-sidebar').addEventListener('click', function() {
+            const body = document.body;
+            const isLightMode = body.classList.contains('light-mode');
+            body.classList.toggle('light-mode', !isLightMode);
+            body.classList.toggle('dark-mode', isLightMode);
+            this.textContent = isLightMode ? 'Mudar para Modo Escuro' : 'Mudar para Modo Claro';
+        });
+    </script>
+</body>
+</html>
